@@ -9,73 +9,136 @@
 
 <header>
   <h1>Raul Ganga</h1>
-  <p class="subtitle">Game Developer · C++ · IA · Game Boy · VR</p>
+  <p class="subtitle"
+     data-es="Game Developer · C++ · IA · Web · VR"
+     data-en="Game Developer · C++ · AI · Web · VR">
+     Game Developer · C++ · IA · Game Boy · VR
+  </p>
+
+  <div class="lang-switch">
+    <button onclick="setLang('es')">ES</button>
+    <button onclick="setLang('en')">EN</button>
+  </div>
 </header>
 
 <section class="about">
-  <h2>Sobre mí</h2>
-  <p>
-    Desarrollador de videojuegos con enfoque en sistemas, rendimiento e inteligencia artificial.
-    Experiencia en desarrollo desde bajo nivel (Game Boy en ensamblador Z80) hasta motores modernos
-    como Unity y Unreal Engine (incluyendo VR).
-
-    Buscando ampliar mis conocimientos en el ámbito de web para ser un profesional más formado.
+  <h2 data-es="Sobre mí" data-en="About me">Sobre mí</h2>
+  
+  <p
+    data-es="Desarrollador de videojuegos con enfoque en sistemas, rendimiento e inteligencia artificial. Experiencia desde bajo nivel (Game Boy en ensamblador Z80) hasta motores modernos como Unity y Unreal Engine (incluyendo VR). Buscando ampliar mis conocimientos en desarrollo web."
+    
+    data-en="Game developer focused on systems, performance, and artificial intelligence. Experience ranges from low-level development (Game Boy Z80 Assembly) to modern engines such as Unity and Unreal Engine (including VR). Currently expanding my knowledge in web development."
+  >
+  Desarrollador de videojuegos con enfoque en sistemas, rendimiento e inteligencia artificial.
   </p>
 </section>
 
 <section class="projects">
-  <h2>Proyectos</h2>
+  <h2 data-es="Proyectos" data-en="Projects">Projects</h2>
 
   <div class="project">
-    <h3>🟣 Game Boy Engine</h3>
-    <p>
-      Desarrollo en ensamblador Z80 para Game Boy. Gestión de memoria, sincronización con VBlank,
-      sistema de colisiones y audio con hardware limitado.
+    <h3 data-es="🟣 Juego hecho en lenguaje ensamblador" data-en="🟣 Game made in assembly language">Game Boy Game</h3>
+    <p
+      data-es="Desarrollo en ensamblador Z80 para Game Boy. Gestión de memoria, sincronización con VBlank y audio a bajo nivel."
+      data-en="Game Boy development in Z80 Assembly. Memory management, VBlank synchronization, and low-level audio systems.">
     </p>
-    <a href="https://roscarul.itch.io/cosmic-muncher" target="_blank">Ver proyecto</a>
+    <a href="projects/cosmic-muncher.html">
+      <span data-es="Ver proyecto" data-en="View project">View project</span>
+    </a>
   </div>
 
   <div class="project">
-    <h3>🔵 IA Engine (C++)</h3>
-    <p>
-      Motor basado en Entity Component System con sistema de eventos desacoplado y Behaviour Trees.
-      Incluye percepción (visión y oído) y toma de decisiones avanzada.
+    <h3 data-es="🔵 Motor de IA (C++)" data-en="🔵 AI Engine (C++)">AI Engine</h3>
+    <p
+      data-es="Motor basado en ECS con sistema de eventos desacoplado y Behaviour Trees. Incluye percepción (visión y oído) y toma de decisiones avanzada."
+      data-en="ECS-based engine with event system and Behaviour Trees. Includes perception (vision/hearing) and advanced decision-making.">
     </p>
-    <a href="https://cletus2000.itch.io/donut-panic" target="_blank">Ver proyecto</a>
+    <a href="projects/donut-panic.html">
+      <span data-es="Ver proyecto" data-en="View project">View project</span>
+    </a>
   </div>
 
   <div class="project">
-    <h3>🟢 VR Game (Unreal Engine)</h3>
-    <p>
-      Desarrollo de experiencia en realidad virtual con interacción física y optimización de rendimiento.
+    <h3 data-es="🟢 Juego VR (Unreal Engine)" data-en="🟢 VR Game (Unreal Engine)">VR Game</h3>
+    <p
+      data-es="Experiencia en realidad virtual con sistemas de interacción y optimización de rendimiento."
+      data-en="Virtual reality experience with interaction systems and performance optimization.">
     </p>
-    <a href="https://github.com/roscarul/HouseOfPuzzles" target="_blank">Ver proyecto</a>
+    <a href="projects/vr-game.html">
+      <span data-es="Ver proyecto" data-en="View project">View project</span>
+    </a>
   </div>
 
   <div class="project">
-    <h3>🟡 Unity Projects</h3>
-    <p>
-      Juegos desarrollados en Unity con mecánicas gameplay, UI y sistemas internos.
+    <h3 data-es="🟡 Proyectos en Unity" data-en="🟡 Unity Projects">Unity Projects</h3>
+    <p
+      data-es="Juegos desarrollados en Unity con mecánicas de gameplay, UI y desarrollo rápido en game jams."
+      data-en="Unity games focused on gameplay systems, UI, and rapid prototyping in game jams.">
     </p>
-    <a href="https://roscarul.itch.io/" target="_blank">Ver proyectos</a>
+    <a href="projects/unity-projects.html">
+      <span data-es="Ver proyectos" data-en="View projects">View projects</span>
+    </a>
   </div>
 
+</section>
+
+<section class="extra">
+  <h2 data-es="Experiencia adicional" data-en="Additional Experience">Additional Experience</h2>
+
+  <p
+    data-es="Experiencia en desarrollo web incluyendo HTML, CSS y JavaScript, así como uso de WordPress, consumo de APIs REST con Postman y trabajo con bases de datos SQL y NoSQL."
+    data-en="Experience in web development including HTML, CSS, and JavaScript, as well as working with WordPress, REST APIs using Postman, and both SQL and NoSQL databases.">
+  </p>
 </section>
 
 <section class="skills">
-  <h2>Skills</h2>
-  <ul>
-    <li>C++, C#, Z80 Assembly</li>
-    <li>ECS · Event Systems</li>
-    <li>Behaviour Trees · IA</li>
-    <li>Game Boy Development</li>
-    <li>Unity · Unreal Engine · VR</li>
-    <li>FMOD · Audio Systems</li>
-  </ul>
+  <h2 data-es="Habilidades" data-en="Skills">Skills</h2>
+
+  <div class="skills-grid">
+
+    <div class="skill-group">
+      <h3 data-es="Programación" data-en="Programming">Programming</h3>
+      <p>C++, C#, Java, Z80 Assembly</p>
+    </div>
+
+    <div class="skill-group">
+      <h3 data-es="Desarrollo de videojuegos" data-en="Game Development">Game Development</h3>
+      <p data-es="Unity · Unreal Engine · VR · Motores propios · Desarrollo para Game Boy"
+         data-en="Unity · Unreal Engine · VR · Custom Engines · Game Boy Development">
+      </p>
+    </div>
+
+    <div class="skill-group">
+      <h3 data-es="IA y Sistemas" data-en="AI & Systems">AI & Systems</h3>
+      <p data-es="Behaviour Trees · ECS · Sistemas de eventos · Pathfinding · Sistemas de percepción"
+         data-en="Behaviour Trees · ECS · Event Systems · Pathfinding · Perception Systems">
+      </p>
+    </div>
+
+    <div class="skill-group">
+      <h3 data-es="Audio" data-en="Audio">Audio</h3>
+      <p data-es="FMOD · Diseño de sonido · Programación de audio"
+         data-en="FMOD · Sound Design · Audio Programming">
+      </p>
+    </div>
+
+    <div class="skill-group">
+      <h3 data-es="Web y herramientas" data-en="Web & Tools">Web & Tools</h3>
+      <p>HTML · CSS · JavaScript · Databases Git </p>
+    </div>
+
+    <div class="skill-group">
+      <h3 data-es="Habilidades personales" data-en="Soft Skills">Soft Skills</h3>
+      <p data-es="Resolución de problemas · Trabajo en equipo · Adaptabilidad · Comunicación · Autoaprendizaje"
+         data-en="Problem Solving · Teamwork · Adaptability · Communication · Self-Learning">
+      </p>
+    </div>
+
+  </div>
 </section>
 
 <section class="contact">
-  <h2>Contacto</h2>
+  <h2 data-es="Contacto" data-en="Contact">Contacto</h2>
   <p>
     <a href="https://github.com/roscarul" target="_blank">GitHub</a> ·
     <a href="https://www.linkedin.com/in/ra%C3%BAl-ganga-gonz%C3%A1lez-8b31a5348/" target="_blank">LinkedIn</a>
@@ -86,5 +149,6 @@
   <p>© 2026 Raul Ganga</p>
 </footer>
 
+<script src="script.js"></script>
 </body>
 </html>
