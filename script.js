@@ -1,10 +1,23 @@
 function setLang(lang) {
-  // Guardar preferencia
   localStorage.setItem("lang", lang);
 
-  // Aplicar idioma
-  applyLang(lang);
+  document.querySelectorAll("[data-es]").forEach(el => {
+    const text = el.getAttribute(`data-${lang}`);
+    if (text) el.textContent = text;
+  });
+
+  document.querySelectorAll(".lang-switch .btn").forEach(btn => {
+    btn.classList.remove("active");
+  });
+
+  document.querySelector(`.lang-switch .btn[onclick="setLang('${lang}')"]`)
+    ?.classList.add("active");
 }
+
+window.onload = () => {
+  const lang = localStorage.getItem("lang") || "es";
+  setLang(lang);
+};
 
 function applyLang(lang) {
   document.querySelectorAll("[data-es]").forEach(el => {

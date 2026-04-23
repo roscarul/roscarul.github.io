@@ -10,10 +10,10 @@
 <header>
     <h1>Donut Panic</h1>
     <a href="../index.html">← Back</a>
-    <div class="lang-switch">
-        <button onclick="setLang('es')">ES</button>
-        <button onclick="setLang('en')">EN</button>
-    </div>
+  <div class="lang-switch">
+    <button onclick="setLang('es')" class="btn">ES</button>
+    <button onclick="setLang('en')" class="btn">EN</button>
+  </div>
 </header>
 
 <section>
@@ -33,10 +33,45 @@
   <h2 data-es="Sistema de IA" data-en="AI System">Sistema de IA</h2>
   <ul>
     <li>Behaviour Trees</li>
-    <li>Perception system (vision & hearing)</li>
+    <li data-es="Sistema de percepción (Visión y oído)" data-en="Perception system (vision & hearing)">Perception system (vision & hearing)</li>
     <li>Event-driven architecture</li>
     <li>Pathfinding</li>
+    <li>Flocking</li>
+    <li>Steering behaviours</li>
+    <li data-es="Depuración y editor visual de la IA" data-en="Debugging and visual editor of the AI">Debugging and visual editor of the AI</li>
   </ul>
+</section>
+
+<!-- MEDIA -->
+<section>
+  <h2 data-es="Media" data-en="Media">Media</h2>
+
+  <div class="carousel-container">
+    <button class="carousel-btn left" onclick="scrollCarousel(-1)">‹</button>
+
+    <div class="carousel" id="carousel">
+
+      <!-- 🖼️ IMÁGENES -->
+      <div class="carousel-item">
+        <img src="../src/DonutPanic/1.png" onclick="openLightbox(this.src)">
+      </div>
+
+      <div class="carousel-item">
+        <img src="../src/DonutPanic/2.png" onclick="openLightbox(this.src)">
+      </div>
+
+      <div class="carousel-item">
+        <img src="../src/DonutPanic/3.png" onclick="openLightbox(this.src)">
+      </div>
+
+      <div class="carousel-item">
+        <img src="../src/DonutPanic/4.png" onclick="openLightbox(this.src)">
+      </div>
+
+    </div>
+
+    <button class="carousel-btn right" onclick="scrollCarousel(1)">›</button>
+  </div>
 </section>
 
 <section>
@@ -59,6 +94,11 @@
 <section>
   <a href="https://cletus2000.itch.io/donut-panic" target="_blank">Play on itch.io</a>
 </section>
+
+<!-- LIGHTBOX -->
+<div id="lightbox" onclick="closeLightbox()">
+  <img id="lightbox-img">
+</div>
 
 <script src="../script.js"></script>
 </body>

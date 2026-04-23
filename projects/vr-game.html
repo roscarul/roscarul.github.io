@@ -10,10 +10,10 @@
 <header>
     <h1>House of Puzzles</h1>
     <a href="../index.html">← Back</a>
-    <div class="lang-switch">
-        <button onclick="setLang('es')">ES</button>
-        <button onclick="setLang('en')">EN</button>
-    </div>
+  <div class="lang-switch">
+    <button onclick="setLang('es')" class="btn">ES</button>
+    <button onclick="setLang('en')" class="btn">EN</button>
+  </div>
 </header>
 
 <section>
@@ -34,6 +34,7 @@
   <ul>
     <li data-es="Interacción natural en VR" data-en="Natural VR interaction"></li>
     <li data-es="Optimización de rendimiento" data-en="Performance optimization"></li>
+    <li data-es="Trabajar con hardware desconocido" data-en="Work with unknown hardware"></li>
   </ul>
 </section>
 
@@ -43,11 +44,20 @@
   data-es="Diseño de interacción en VR y optimización en tiempo real."
   data-en="VR interaction design and real-time optimization.">
   </p>
+  <p 
+  data-es="Manejo básico de unreal engine y su sistema de programación por nodos."
+  data-en="Basic understanding of Unreal Engine and its node-based programming system.">
+  </p>
 </section>
 
 <section>
   <a href="https://github.com/roscarul/HouseOfPuzzles" target="_blank">View on GitHub</a>
 </section>
+
+<!-- LIGHTBOX -->
+<div id="lightbox" onclick="closeLightbox()">
+  <img id="lightbox-img">
+</div>
 
 <script src="../script.js"></script>
 </body>
