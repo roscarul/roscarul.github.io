@@ -467,7 +467,7 @@ footer {
   transform: translateY(-2px);
 }
 
-/* Variante principal (CV por ejemplo) */
+/* Variante principal */
 .btn-primary {
   background: #58a6ff;
   color: #0d1117;
@@ -477,6 +477,8 @@ footer {
 .btn-primary:hover {
   background: #1f6feb;
 }
+
+/* Relacionados con el cv */
 
 .cv-button {
   display: inline-block;
@@ -495,7 +497,157 @@ footer {
   transform: translateY(-2px);
 }
 
-/* ─── RESPONSIVE ──────────────────────────────── */
+.cv-icon {
+    width: 22px;
+    height: 22px;
+    margin-left: 8px;
+    vertical-align: middle;
+}
+
+/*Botón back*/
+.back-button {
+    margin-top: 20px;
+}
+
+/* ─── FEATURED PROJECT ────────────────────────── */
+
+.project-featured {
+  border-color: var(--accent);
+  background: linear-gradient(135deg, #131820 0%, #0f1a26 100%);
+  padding: 28px 28px 24px;
+  box-shadow: 0 0 0 1px var(--accent-glow), 0 8px 40px rgba(79, 163, 224, 0.08);
+}
+
+.project-featured::before {
+  opacity: 1;
+  width: 4px;
+}
+
+.project-featured-badge {
+  display: inline-block;
+  margin-bottom: 12px;
+  padding: 3px 10px;
+  border-radius: 4px;
+  background: var(--accent-dim);
+  border: 1px solid var(--accent-glow);
+  color: var(--accent);
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.project-featured h3 {
+  font-size: 1.2rem;
+  color: #e8edf2;
+  margin-bottom: 10px;
+}
+
+.project-featured-desc {
+  font-size: 0.95rem !important;
+  color: var(--text) !important;
+  line-height: 1.7;
+  border-left: 2px solid var(--accent-glow);
+  padding-left: 14px;
+  margin-bottom: 4px;
+}
+
+/* ─── TIMELINE ────────────────────────────────── */
+
+.timeline-list {
+  position: relative;
+  padding-left: 24px;
+  padding-right: 0;
+  margin: 0;
+}
+
+.timeline-list::before {
+  content: '';
+  position: absolute;
+  left: 4px;
+  top: 6px;
+  bottom: 6px;
+  width: 1px;
+  background: linear-gradient(180deg, var(--accent), var(--purple), var(--green));
+  opacity: 0.35;
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 36px;
+}
+
+.timeline-item:last-child {
+  margin-bottom: 0;
+}
+
+.timeline-dot {
+  position: absolute;
+  left: -24px;
+  top: 4px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: 2px solid var(--bg);
+  z-index: 1;
+}
+
+.timeline-dot--education { background: var(--accent); }
+.timeline-dot--award     { background: #f6c90e; }
+.timeline-dot--work      { background: var(--green); }
+
+.timeline-item--current .timeline-dot--work {
+  box-shadow: 0 0 0 4px rgba(62, 207, 108, 0.2);
+}
+
+.timeline-content {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 16px 20px;
+  transition: border-color 0.2s ease, background 0.2s ease;
+}
+
+.timeline-item--current .timeline-content {
+  border-color: rgba(62, 207, 108, 0.3);
+}
+
+.timeline-content:hover {
+  border-color: var(--border-accent);
+  background: var(--bg-card-hover);
+}
+
+.timeline-date {
+  display: inline-block;
+  margin-bottom: 6px;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  letter-spacing: 0.06em;
+}
+
+.timeline-content h3 {
+  font-size: 0.97rem;
+  font-weight: 700;
+  color: #e2eaf2;
+  margin-bottom: 6px;
+}
+
+.timeline-content p {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+/* ─── HEADER PARALLAX ─────────────────────────── */
+
+header {
+  will-change: transform, opacity;
+  transition: opacity 0.05s linear;
+}
+
+
 
 @media (max-width: 600px) {
   h1 { font-size: 2.2rem; }

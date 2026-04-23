@@ -40,6 +40,15 @@ document.addEventListener("DOMContentLoaded", () => {
   applyLang(lang);
 });
 
+window.addEventListener("scroll", () => {
+  const header = document.querySelector("header");
+  const scrollY = window.scrollY;
+  if (header) {
+    header.style.transform = `translateY(${scrollY * 0.35}px)`;
+    header.style.opacity = Math.max(0, 1 - scrollY / 340);
+  }
+});
+
 function scrollCarousel(direction) {
   const carousel = document.getElementById("carousel");
   const scrollAmount = 320;
