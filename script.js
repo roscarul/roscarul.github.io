@@ -70,3 +70,53 @@ function openLightbox(src) {
 function closeLightbox() {
   document.getElementById("lightbox").style.display = "none";
 }
+
+// ─── SKILLS MARQUEE ──────────────────────────────────────────────────────────
+// Clones items so only one set is ever visible at a time.
+// The clone fills the gap after the originals scroll off, creating a seamless
+// loop without any visible repetition inside the viewport.
+(function initMarquee() {
+  const track = document.getElementById('marquee-track');
+  if (!track) return;
+
+  const wrapper = track.closest('.skills-marquee-wrapper');
+  const originals = Array.from(track.children);
+
+  function setup() {
+    // Remove any previous clones
+    track.querySelectorAll('.marquee-clone').forEach(el => el.remove());
+
+    // Measure the total width of one set of originals (items + gaps)
+    const style   = getComputedStyle(track);
+    const gap     = parseFloat(style.gap) || 80;
+    let setWidth  = 0;
+    originals.forEach(item => { setWidth += item.offsetWidth; });
+    setWidth += gap * originals.length; // gap after every item incl. last
+
+    const viewWidth = wrapper.offsetWidth;
+
+    // We need at least enough clones to fill the viewport after the originals
+    // scroll off. One clone-set is always sufficient because setWidth >= items
+    // and we never want more than one set visible.
+    const clone = document.createDocumentFragment();
+    originals.forEach(item => {
+      const c = item.cloneNode(true);
+      c.classList.add('marquee-clone');
+      clone.appendChild(c);
+    });
+    track.appendChild(clone);
+
+    // Tell the keyframe exactly how far to shift (one full original set)
+    track.style.setProperty('--marquee-shift', `-${setWidth}px`);
+
+    // Re-trigger animation cleanly
+    track.classList.remove('animating');
+    void track.offsetWidth; // force reflow
+    track.classList.add('animating');
+  }
+
+  // Run on load and on resize
+  window.addEventListener('load', setup);
+  window.addEventListener('resize', setup);
+  setup();
+})();
