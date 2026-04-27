@@ -4,98 +4,213 @@
   <meta charset="UTF-8">
   <title>Cosmic Muncher</title>
   <link rel="stylesheet" href="../style.css">
+  <style>
+    .project-subtitle {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+    .tech-pills { display: flex; flex-wrap: wrap; gap: 8px; }
+    .tech-pill {
+      display: inline-flex;
+      align-items: center;
+      padding: 3px 10px;
+      border-radius: 20px;
+      background: var(--bg);
+      border: 1px solid var(--border-accent);
+      color: var(--accent);
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.72rem;
+      letter-spacing: 0.04em;
+    }
+    .overview-block p {
+      color: var(--text);
+      font-size: 1.02rem;
+      line-height: 1.85;
+      margin-bottom: 1.1em;
+      border-left: 2px solid var(--border-accent);
+      padding-left: 18px;
+    }
+    .overview-block p:last-child { margin-bottom: 0; }
+    .highlight-word { color: var(--accent); font-weight: 600; }
+    .role-badges { display: flex; flex-wrap: wrap; gap: 8px; }
+    .role-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 5px 12px;
+      background: var(--accent-dim);
+      border: 1px solid var(--border-accent);
+      border-radius: 6px;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.78rem;
+      color: var(--accent);
+    }
+    .challenge-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 10px;
+    }
+    .challenge-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 12px 14px;
+      transition: border-color 0.2s;
+    }
+    .challenge-card:hover { border-color: var(--border-accent); }
+    .challenge-card-title {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--accent);
+      margin-bottom: 5px;
+    }
+    .challenge-card-desc { font-size: 0.82rem; color: var(--text-muted); line-height: 1.5; }
+    .btn-itchio { display: inline-flex; align-items: center; gap: 10px; }
+    .btn-itchio svg { width: 18px; height: 18px; flex-shrink: 0; }
+  </style>
 </head>
 <body>
 
 <header>
   <h1>Cosmic Muncher</h1>
-  <a href="../index.html" class="btn btn-primary back-button"
+  <p class="subtitle"
+    data-es="Audio Programmer - Game Boy (Z80 ASM)"
+    data-en="Audio Programmer - Game Boy (Z80 ASM)">
+  </p>
+  <a href="../index.html" class="btn btn-primary back-button" style="margin-top: 0;"
     data-es="← Volver a inicio"
     data-en="← Back to home">
   </a>
-
   <div class="lang-switch">
     <button onclick="setLang('es')" class="btn">ES</button>
     <button onclick="setLang('en')" class="btn">EN</button>
   </div>
 </header>
 
+<!-- TECH STACK -->
 <section>
-  <h2 data-es="Descripción" data-en="Overview">Descripción</h2>
-  <p 
-  data-es="Juego desarrollado en ensamblador Z80 para Game Boy, centrado en optimización y control directo del hardware."
-  data-en="Game developed in Z80 Assembly for the Game Boy, focused on optimization and low-level hardware control.">
-  </p>
+  <p class="project-subtitle" data-es="Stack tecnológico" data-en="Tech stack"></p>
+  <div class="tech-pills">
+    <span class="tech-pill">Z80 Assembly</span>
+    <span class="tech-pill">Game Boy Hardware</span>
+    <span class="tech-pill">Audio Programming</span>
+    <span class="tech-pill">VBlank Sync</span>
+    <span class="tech-pill">Memory Optimization</span>
+    <span class="tech-pill">Git</span>
+  </div>
 </section>
 
+<!-- OVERVIEW -->
 <section>
-  <h2 data-es="Rol" data-en="Role">Rol</h2>
-  <p><b>Audio Programmer & Sound Designer</b></p>
+  <h2 data-es="Descripción" data-en="Overview"></h2>
+  <div class="overview-block">
+    <p
+      data-es="Cosmic Muncher es un videojuego desarrollado en <span class='highlight-word'>ensamblador Z80</span> para Game Boy. El proyecto nos obligó a trabajar directamente con el hardware real de la consola, sin abstracciones ni motores externos, lo que supuso un desafío técnico muy diferente al resto de proyectos."
+      data-en="Cosmic Muncher is a video game developed in <span class='highlight-word'>Z80 Assembly</span> for the Game Boy. The project required us to work directly with the console's real hardware, without any abstractions or external engines, making it a very different technical challenge from any other project.">
+    </p>
+    <p
+      data-es="Mi responsabilidad principal fue la <span class='highlight-word'>programación del sistema de audio</span>: implementar y sincronizar efectos de sonido y música directamente sobre el hardware de audio del Game Boy, gestionando los canales de onda, los registros de control y la temporización frame a frame."
+      data-en="My main responsibility was the <span class='highlight-word'>audio system programming</span>: implementing and synchronizing sound effects and music directly on the Game Boy audio hardware, managing wave channels, control registers, and frame-by-frame timing.">
+    </p>
+    <p
+      data-es="Trabajar con restricciones extremas de memoria y ciclos de CPU nos enseñó a pensar de forma radicalmente diferente: cada byte y cada ciclo contaban. Fue una experiencia que pone en perspectiva lo que ocurre bajo la superficie de cualquier sistema."
+      data-en="Working under extreme memory and CPU cycle constraints taught us to think in a radically different way: every byte and every cycle mattered. It was an experience that puts into perspective what happens beneath the surface of any system.">
+    </p>
+  </div>
+</section>
+
+<!-- ROL -->
+<section>
+  <h2 data-es="Rol" data-en="Role"></h2>
+  <div class="role-badges">
+    <span class="role-badge">
+      <svg viewBox="0 0 24 24" fill="currentColor" width="13" height="13"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/></svg>
+      Audio Programmer
+    </span>
+    <span class="role-badge">
+      <svg viewBox="0 0 24 24" fill="currentColor" width="13" height="13"><path d="M12 3c-4.97 0-9 4.03-9 9s4.03 9 9 9 9-4.03 9-9-4.03-9-9-9zm-1 14H9V7h2v10zm4 0h-2V7h2v10z"/></svg>
+      Sound Designer
+    </span>
+  </div>
+</section>
+
+<!-- DESAFÍOS -->
+<section>
+  <h2 data-es="Desafíos técnicos" data-en="Technical Challenges"></h2>
+  <div class="challenge-grid">
+    <div class="challenge-card">
+      <div class="challenge-card-title" data-es="Memoria extrema" data-en="Extreme Memory"></div>
+      <div class="challenge-card-desc"
+        data-es="Restricciones muy estrictas de ROM y RAM: cada byte debía estar justificado."
+        data-en="Very strict ROM and RAM constraints: every byte had to be justified.">
+      </div>
+    </div>
+    <div class="challenge-card">
+      <div class="challenge-card-title" data-es="Sincronización VBlank" data-en="VBlank Sync"></div>
+      <div class="challenge-card-desc"
+        data-es="La lógica de audio debía ejecutarse en sincronía con el ciclo de refresco vertical del hardware."
+        data-en="Audio logic had to run in sync with the hardware's vertical refresh cycle.">
+      </div>
+    </div>
+    <div class="challenge-card">
+      <div class="challenge-card-title" data-es="Hardware de audio directo" data-en="Direct Audio Hardware"></div>
+      <div class="challenge-card-desc"
+        data-es="Programación a nivel de registros: canales de onda, envolventes y frecuencias sin librerías."
+        data-en="Register-level programming: wave channels, envelopes and frequencies without libraries.">
+      </div>
+    </div>
+    <div class="challenge-card">
+      <div class="challenge-card-title" data-es="Sin abstracciones" data-en="No Abstractions"></div>
+      <div class="challenge-card-desc"
+        data-es="Trabajo directo con el hardware real sin motor ni framework, solo ensamblador."
+        data-en="Working directly with real hardware with no engine or framework, just assembly.">
+      </div>
+    </div>
+  </div>
 </section>
 
 <!-- MEDIA -->
 <section>
-  <h2 data-es="Media" data-en="Media">Media</h2>
-
+  <h2 data-es="Media" data-en="Media"></h2>
   <div class="carousel-container">
     <button class="carousel-btn left" onclick="scrollCarousel(-1)">‹</button>
-
     <div class="carousel" id="carousel">
-
-      <!-- 🎥 VIDEO (MEJORADO) -->
-    <div class="carousel-item video-item">
-    <iframe 
-        src="https://www.youtube.com/embed/mj4YTr-U1gk"
-        title="YouTube video"
-        frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen>
-    </iframe>
-    </div>
-
-      <!-- 🖼️ IMÁGENES -->
+      <div class="carousel-item video-item">
+        <iframe
+          src="https://www.youtube.com/embed/mj4YTr-U1gk"
+          title="YouTube video"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen>
+        </iframe>
+      </div>
       <div class="carousel-item">
         <img src="../src/CosmicMuncher/1_St4f.png" onclick="openLightbox(this.src)">
       </div>
-
       <div class="carousel-item">
         <img src="../src/CosmicMuncher/Vy2fZR.png" onclick="openLightbox(this.src)">
       </div>
-
       <div class="carousel-item">
         <img src="../src/CosmicMuncher/xVbub8.png" onclick="openLightbox(this.src)">
       </div>
-
       <div class="carousel-item">
         <img src="../src/CosmicMuncher/Pc2Axz.jpg" onclick="openLightbox(this.src)">
       </div>
-
     </div>
-
     <button class="carousel-btn right" onclick="scrollCarousel(1)">›</button>
   </div>
 </section>
 
+<!-- PLAY BUTTON -->
 <section>
-  <h2 data-es="Desafíos" data-en="Challenges">Desafíos</h2>
-  <ul>
-    <li data-es="Limitaciones de memoria extrema" data-en="Extreme memory constraints"></li>
-    <li data-es="Sincronización con VBlank" data-en="VBlank synchronization"></li>
-    <li data-es="Programación directa del hardware de audio" data-en="Direct audio hardware programming"></li>
-  </ul>
-</section>
-
-<section>
-  <h2 data-es="Qué aprendí" data-en="What I learned">Qué aprendí</h2>
-  <p 
-  data-es="Optimización a bajo nivel, control del hardware y eficiencia en sistemas limitados, aprender lenguaje ensamblador."
-  data-en="Low-level optimization, hardware control, and efficiency under strict constraints, learn assembly language.">
-  </p>
-</section>
-
-<section>
-  <a href="https://roscarul.itch.io/cosmic-muncher" target="_blank">
-    ▶ Play on itch.io
+  <a href="https://roscarul.itch.io/cosmic-muncher" target="_blank" class="btn btn-primary btn-itchio">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M3.13 1.338C2.08 1.96.02 4.328 0 4.95v1.03c0 1.303 1.22 2.45 2.325 2.45 1.33 0 2.436-1.102 2.436-2.41 0 1.308 1.07 2.41 2.4 2.41 1.328 0 2.362-1.102 2.362-2.41 0 1.308 1.107 2.41 2.434 2.41h.024c1.33 0 2.434-1.102 2.434-2.41 0 1.308 1.035 2.41 2.363 2.41 1.33 0 2.4-1.102 2.4-2.41 0 1.308 1.106 2.41 2.435 2.41C22.78 8.43 24 7.283 24 5.98V4.95c-.02-.62-2.082-2.99-3.13-3.612C19.486.47 12.095.442 3.13 1.338zm8.85 6.696c-.332.34-.815.554-1.372.554-.558 0-1.04-.22-1.372-.556v.002c-.334.336-.815.554-1.372.554a2.01 2.01 0 01-.604-.09v8.392c0 .276.526.512 1.173.512h7.938c.646 0 1.172-.236 1.172-.512V8.498a2.014 2.014 0 01-.603.09c-.557 0-1.038-.218-1.37-.554-.334.336-.815.556-1.372.556-.558 0-1.038-.218-1.37-.554l-.002-.002zm-1.788 2.137h4.618c.36 0 .65.294.65.657v3.608c0 .362-.29.657-.65.657H10.19a.653.653 0 01-.65-.657V10.83c0-.363.292-.657.65-.657z"/></svg>
+    <span data-es="Jugar en itch.io" data-en="Play on itch.io"></span>
   </a>
 </section>
 
@@ -105,6 +220,5 @@
 </div>
 
 <script src="../script.js"></script>
-
 </body>
 </html>

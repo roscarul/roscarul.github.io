@@ -1,43 +1,34 @@
+function applyLang(lang) {
+  document.querySelectorAll("[data-es]").forEach(el => {
+    const text = el.getAttribute("data-" + lang);
+    if (text) el.innerHTML = text;
+  });
+
+  // Update CV download link based on language
+  const cvLink = document.getElementById("cv-download");
+  if (cvLink) {
+    if (lang === "es") {
+      cvLink.href = "cv/Raul_s_CV_ES.pdf";
+    } else {
+      cvLink.href = "cv/Raul_s_CV.pdf";
+    }
+  }
+}
+
 function setLang(lang) {
   localStorage.setItem("lang", lang);
+  applyLang(lang);
 
-  document.querySelectorAll("[data-es]").forEach(el => {
-    const text = el.getAttribute(`data-${lang}`);
-    if (text) el.textContent = text;
-  });
-
-  document.querySelectorAll(".lang-switch .btn").forEach(btn => {
-    btn.classList.remove("active");
-  });
+  document.querySelectorAll(".lang-switch .btn")
+    .forEach(btn => btn.classList.remove("active"));
 
   document.querySelector(`.lang-switch .btn[onclick="setLang('${lang}')"]`)
     ?.classList.add("active");
 }
 
-window.onload = () => {
+document.addEventListener("DOMContentLoaded", () => {
   const lang = localStorage.getItem("lang") || "es";
   setLang(lang);
-};
-
-function applyLang(lang) {
-  document.querySelectorAll("[data-es]").forEach(el => {
-    const text = el.getAttribute("data-" + lang);
-    if (text) el.textContent = text;
-  });
-}
-
-// Al cargar la página
-document.addEventListener("DOMContentLoaded", () => {
-  // 1. Intentar recuperar idioma guardado
-  let lang = localStorage.getItem("lang");
-
-  // 2. Si no hay, usar español por defecto
-  if (!lang) {
-    lang = "es";
-  }
-
-  // 3. Aplicar idioma
-  applyLang(lang);
 });
 
 window.addEventListener("scroll", () => {

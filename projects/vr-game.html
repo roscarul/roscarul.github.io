@@ -4,57 +4,231 @@
   <meta charset="UTF-8">
   <title>House of Puzzles</title>
   <link rel="stylesheet" href="../style.css">
+
+  <style>
+    .project-subtitle {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    .tech-pills { display: flex; flex-wrap: wrap; gap: 8px; }
+
+    .tech-pill {
+      display: inline-flex;
+      align-items: center;
+      padding: 3px 10px;
+      border-radius: 20px;
+      background: var(--bg);
+      border: 1px solid var(--border-accent);
+      color: var(--accent);
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.72rem;
+      letter-spacing: 0.04em;
+    }
+
+    .overview-block p {
+      color: var(--text);
+      font-size: 1.02rem;
+      line-height: 1.85;
+      margin-bottom: 1.1em;
+      border-left: 2px solid var(--border-accent);
+      padding-left: 18px;
+    }
+
+    .highlight-word { color: var(--accent); font-weight: 600; }
+
+    .role-badges { display: flex; flex-wrap: wrap; gap: 8px; }
+
+    .role-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 5px 12px;
+      background: var(--accent-dim);
+      border: 1px solid var(--border-accent);
+      border-radius: 6px;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.78rem;
+      color: var(--accent);
+    }
+
+    .challenge-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 10px;
+    }
+
+    .challenge-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 12px 14px;
+    }
+
+    .challenge-card-title {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--accent);
+      margin-bottom: 5px;
+    }
+
+    .challenge-card-desc {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+  </style>
 </head>
+
 <body>
 
 <header>
   <h1>House of Puzzles</h1>
+
+  <p class="subtitle"
+    data-es="VR Developer · Game Programmer"
+    data-en="VR Developer · Game Programmer">
+  </p>
+
   <a href="../index.html" class="btn btn-primary back-button"
     data-es="← Volver a inicio"
     data-en="← Back to home">
   </a>
+
   <div class="lang-switch">
     <button onclick="setLang('es')" class="btn">ES</button>
     <button onclick="setLang('en')" class="btn">EN</button>
   </div>
 </header>
 
+<!-- TECH STACK -->
 <section>
-  <h2 data-es="Descripción" data-en="Overview">Descripción</h2>
-  <p 
-  data-es="Experiencia VR desarrollada en Unreal Engine con interacción física."
-  data-en="VR experience developed in Unreal Engine with physical interaction systems.">
-  </p>
+  <p class="project-subtitle" data-es="Stack tecnológico" data-en="Tech stack"></p>
+  <div class="tech-pills">
+    <span class="tech-pill">Unreal Engine</span>
+    <span class="tech-pill">Blueprints</span>
+    <span class="tech-pill">VR Development</span>
+    <span class="tech-pill">Physics Interaction</span>
+    <span class="tech-pill">Performance Optimization</span>
+  </div>
 </section>
 
+<!-- OVERVIEW -->
 <section>
-  <h2 data-es="Rol" data-en="Role">Rol</h2>
-  <p><b>VR Developer · Game Programmer</b></p>
+  <h2 data-es="Descripción" data-en="Overview"></h2>
+  <div class="overview-block">
+    <p
+      data-es="House of Puzzles es una experiencia de realidad virtual desarrollada en <span class='highlight-word'>Unreal Engine</span>, centrada en la interacción física con el entorno y la resolución de puzzles dentro de un espacio inmersivo."
+      data-en="House of Puzzles is a virtual reality experience developed in <span class='highlight-word'>Unreal Engine</span>, focused on physical interaction with the environment and puzzle-solving within an immersive space.">
+    </p>
+
+    <p
+      data-es="El proyecto implicó diseñar sistemas de interacción que resultasen <span class='highlight-word'>naturales e intuitivos</span> en VR, teniendo en cuenta las limitaciones del hardware y la necesidad de mantener una experiencia fluida."
+      data-en="The project involved designing interaction systems that felt <span class='highlight-word'>natural and intuitive</span> in VR, taking into account hardware limitations and the need to maintain a smooth experience.">
+    </p>
+  </div>
 </section>
 
+<!-- ROLE -->
 <section>
-  <h2 data-es="Desafíos" data-en="Challenges">Desafíos</h2>
-  <ul>
-    <li data-es="Interacción natural en VR" data-en="Natural VR interaction"></li>
-    <li data-es="Optimización de rendimiento" data-en="Performance optimization"></li>
-    <li data-es="Trabajar con hardware desconocido" data-en="Work with unknown hardware"></li>
-  </ul>
+  <h2 data-es="Rol" data-en="Role"></h2>
+  <div class="role-badges">
+    <span class="role-badge">VR Developer</span>
+    <span class="role-badge">Game Programmer</span>
+  </div>
 </section>
 
+<!-- CHALLENGES -->
 <section>
-  <h2 data-es="Qué aprendí" data-en="What I learned">Qué aprendí</h2>
-  <p 
-  data-es="Diseño de interacción en VR y optimización en tiempo real."
-  data-en="VR interaction design and real-time optimization.">
-  </p>
-  <p 
-  data-es="Manejo básico de unreal engine y su sistema de programación por nodos."
-  data-en="Basic understanding of Unreal Engine and its node-based programming system.">
-  </p>
+  <h2 data-es="Desafíos técnicos" data-en="Technical Challenges"></h2>
+  <div class="challenge-grid">
+    <div class="challenge-card">
+      <div class="challenge-card-title"
+        data-es="Interacción en VR"
+        data-en="VR Interaction">
+      </div>
+      <div class="challenge-card-desc"
+        data-es="Diseñar interacciones naturales que respondiesen correctamente al movimiento del usuario."
+        data-en="Designing natural interactions that respond accurately to user movement.">
+      </div>
+    </div>
+
+    <div class="challenge-card">
+      <div class="challenge-card-title"
+        data-es="Optimización"
+        data-en="Optimization">
+      </div>
+      <div class="challenge-card-desc"
+        data-es="Mantener un rendimiento estable para evitar problemas de confort en VR."
+        data-en="Maintaining stable performance to avoid discomfort in VR experiences.">
+      </div>
+    </div>
+
+    <div class="challenge-card">
+      <div class="challenge-card-title"
+        data-es="Hardware"
+        data-en="Hardware Constraints">
+      </div>
+      <div class="challenge-card-desc"
+        data-es="Adaptación a dispositivos y entornos de desarrollo poco familiares."
+        data-en="Adapting to unfamiliar devices and development environments.">
+      </div>
+    </div>
+  </div>
 </section>
 
+<!-- MEDIA -->
 <section>
-  <a href="https://github.com/roscarul/HouseOfPuzzles" target="_blank">View on GitHub</a>
+  <h2 data-es="Media" data-en="Media"></h2>
+
+  <div class="carousel-container">
+    <button class="carousel-btn left" onclick="scrollCarousel(-1)">‹</button>
+
+    <div class="carousel" id="carousel">
+      <div class="carousel-item">
+        <img src="../src/VRGame/1.jpeg" onclick="openLightbox(this.src)">
+      </div>
+      <div class="carousel-item">
+        <img src="../src/VRGame/2.jpeg" onclick="openLightbox(this.src)">
+      </div>
+      <div class="carousel-item">
+        <img src="../src/VRGame/3.jpeg" onclick="openLightbox(this.src)">
+      </div>
+      <div class="carousel-item">
+        <img src="../src/VRGame/4.jpeg" onclick="openLightbox(this.src)">
+      </div>
+    </div>
+
+    <button class="carousel-btn right" onclick="scrollCarousel(1)">›</button>
+  </div>
+</section>
+
+<!-- LEARNING -->
+<section>
+  <h2 data-es="Aprendizajes" data-en="Key Learnings"></h2>
+  <div class="overview-block">
+    <p
+      data-es="Diseño de interacción en entornos de realidad virtual, priorizando la <span class='highlight-word'>ergonomía y la intuición</span> del usuario."
+      data-en="Designing interaction systems in virtual reality, prioritizing <span class='highlight-word'>ergonomics and user intuition</span>.">
+    </p>
+
+    <p
+      data-es="Comprensión de los fundamentos de <span class='highlight-word'>Unreal Engine y Blueprints</span> como herramienta de desarrollo."
+      data-en="Understanding the fundamentals of <span class='highlight-word'>Unreal Engine and Blueprints</span> as development tools.">
+    </p>
+  </div>
+</section>
+
+<!-- LINK -->
+<section>
+  <a href="https://github.com/roscarul/HouseOfPuzzles" target="_blank" class="btn btn-primary">
+    <span data-es="Ver en GitHub" data-en="View on GitHub"></span>
+  </a>
 </section>
 
 <!-- LIGHTBOX -->

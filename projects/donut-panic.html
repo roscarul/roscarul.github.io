@@ -4,99 +4,319 @@
   <meta charset="UTF-8">
   <title>Donut Panic</title>
   <link rel="stylesheet" href="../style.css">
+  <style>
+    .project-subtitle {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    .tech-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .tech-pill {
+      display: inline-flex;
+      align-items: center;
+      padding: 3px 10px;
+      border-radius: 20px;
+      background: var(--bg);
+      border: 1px solid var(--border-accent);
+      color: var(--accent);
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.72rem;
+      letter-spacing: 0.04em;
+    }
+
+    .overview-block p {
+      color: var(--text);
+      font-size: 1.02rem;
+      line-height: 1.85;
+      margin-bottom: 1.1em;
+      border-left: 2px solid var(--border-accent);
+      padding-left: 18px;
+    }
+
+    .overview-block p:last-child { margin-bottom: 0; }
+
+    .highlight-word {
+      color: var(--accent);
+      font-weight: 600;
+    }
+
+    .ai-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 10px;
+    }
+
+    .ai-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 12px 14px;
+      transition: border-color 0.2s;
+    }
+
+    .ai-card:hover { border-color: var(--border-accent); }
+
+    .ai-card-title {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--accent);
+      margin-bottom: 5px;
+    }
+
+    .ai-card-desc {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    .role-badges { display: flex; flex-wrap: wrap; gap: 8px; }
+
+    .role-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 5px 12px;
+      background: var(--accent-dim);
+      border: 1px solid var(--border-accent);
+      border-radius: 6px;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.78rem;
+      color: var(--accent);
+    }
+
+    .youtube-label {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      margin-bottom: 16px;
+      line-height: 1.7;
+      border-left: 2px solid var(--border-accent);
+      padding-left: 18px;
+    }
+
+    .youtube-embed {
+      width: 100%;
+      max-width: 680px;
+      aspect-ratio: 16 / 9;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      overflow: hidden;
+      background: var(--bg-card);
+    }
+
+    .youtube-embed iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+      display: block;
+    }
+
+    .btn-itchio {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .btn-itchio svg {
+      width: 18px;
+      height: 18px;
+      flex-shrink: 0;
+    }
+  </style>
 </head>
 <body>
 
 <header>
-    <h1>Donut Panic</h1>
-    <a href="../index.html" class="btn btn-primary back-button"
-      data-es="← Volver a inicio"
-      data-en="← Back to home">
-    </a>
+  <h1>Donut Panic</h1>
+    <p class="subtitle"
+      data-es="Motor de IA - Motor propio"
+      data-en="AI Engine - Own engine">
+    </p>
+  <a href="../index.html" class="btn btn-primary back-button" style="margin-top: 0;"
+    data-es="← Volver a inicio"
+    data-en="← Back to home">
+  </a>
   <div class="lang-switch">
     <button onclick="setLang('es')" class="btn">ES</button>
     <button onclick="setLang('en')" class="btn">EN</button>
   </div>
 </header>
 
+<!-- TECH STACK -->
+<section>
+  <p class="project-subtitle" data-es="Stack tecnológico" data-en="Tech stack">Stack tecnológico</p>
+  <div class="tech-pills">
+    <span class="tech-pill">C++</span>
+    <span class="tech-pill">Custom Engine</span>
+    <span class="tech-pill">Behaviour Trees</span>
+    <span class="tech-pill">Pathfinding</span>
+    <span class="tech-pill">Flocking</span>
+    <span class="tech-pill">Steering Behaviours</span>
+    <span class="tech-pill">FMOD</span>
+    <span class="tech-pill">Git</span>
+  </div>
+</section>
+
+<!-- OVERVIEW -->
 <section>
   <h2 data-es="Descripción" data-en="Overview">Descripción</h2>
-  <p 
-  data-es="Juego desarrollado desde cero con un motor propio en C++, con foco en inteligencia artificial avanzada."
-  data-en="Game built from scratch using a custom C++ engine, focused on advanced AI systems.">
-  </p>
+  <div class="overview-block">
+    <p
+      data-es="Donut Panic es el proyecto más grande en el que he trabajado hasta la fecha. Junto con cuatro compañeros, desarrollamos un videojuego completo <span class='highlight-word'>desde cero</span>, enfrentándonos a retos que trascendían lo puramente técnico: gestión de equipo, diseño de sistemas, toma de decisiones colectiva y coordinación a lo largo de todo el ciclo de desarrollo."
+      data-en="Donut Panic is the largest project I have worked on to date. Together with four teammates, we developed a complete video game <span class='highlight-word'>from scratch</span>, facing challenges that went well beyond the purely technical: team management, systems design, collective decision-making, and coordination throughout the entire development cycle.">
+    </p>
+    <p
+      data-es="Una de las exigencias más significativas fue la construcción de nuestro propio motor. En mi caso, fui responsable del <span class='highlight-word'>motor de inteligencia artificial</span>, lo que implicó diseñar e implementar todos sus sistemas desde los fundamentos: percepción, toma de decisiones, navegación y comportamiento colectivo. Además de que las soluciones debían funcionar correctamente, también tenían que ser <span class='highlight-word'>prácticas y ergonómicas</span> para el equipo, por lo que desarrollé herramientas de depuración y un editor visual que facilitasen el trabajo durante la producción."
+      data-en="One of the most significant demands was building our own engine. In my case, I was responsible for the <span class='highlight-word'>artificial intelligence engine</span>, which meant designing and implementing all its systems from the ground up: perception, decision-making, navigation, and collective behaviour. Beyond correctness, the solutions also had to be <span class='highlight-word'>practical and ergonomic</span> for the team, so I developed debugging tools and a visual editor to ease the workflow during production.">
+    </p>
+    <p
+      data-es="El proyecto también nos obligó a documentar de forma exhaustiva tanto el código como las decisiones de diseño, estableciendo una base de comunicación sólida que mantuviese al equipo alineado en cuanto al rumbo del proyecto. Esta disciplina resultó tan valiosa como el propio trabajo técnico."
+      data-en="The project also required us to document both the codebase and the game's design decisions extensively, establishing a strong communication foundation that kept the team aligned throughout development. This discipline proved as valuable as the technical work itself.">
+    </p>
+    <p
+      data-es="En conjunto, fue una experiencia que enriqueció profundamente mi forma de entender el desarrollo de videojuegos: no solo como disciplina técnica, sino como un proceso que integra <span class='highlight-word'>metodología de trabajo, resolución de problemas y colaboración</span>."
+      data-en="Overall, it was an experience that deeply enriched my understanding of game development: not only as a technical discipline, but as a process that integrates <span class='highlight-word'>work methodology, problem-solving, and collaboration</span>.">
+    </p>
+  </div>
 </section>
 
+<!-- ROL -->
 <section>
   <h2 data-es="Rol" data-en="Role">Rol</h2>
-  <p><b>AI Programmer · Level Designer · Sound Designer</b></p>
+  <div class="role-badges">
+    <span class="role-badge">
+      <svg viewBox="0 0 24 24" fill="currentColor" width="13" height="13"><path d="M12 2a10 10 0 110 20A10 10 0 0112 2zm0 2a8 8 0 100 16A8 8 0 0012 4zm-1 3h2v6l4 2-1 1.73-5-2.5V7z"/></svg>
+      AI Programmer
+    </span>
+    <span class="role-badge">
+      <svg viewBox="0 0 24 24" fill="currentColor" width="13" height="13"><path d="M20.5 3l-.16.03L15 5.1 9 3 3.36 4.9c-.21.07-.36.25-.36.48V20.5c0 .28.22.5.5.5l.16-.03L9 18.9l6 2.1 5.64-1.9c.21-.07.36-.25.36-.48V3.5c0-.28-.22-.5-.5-.5zM15 19l-6-2.11V5l6 2.11V19z"/></svg>
+      Level Designer
+    </span>
+    <span class="role-badge">
+      <svg viewBox="0 0 24 24" fill="currentColor" width="13" height="13"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/></svg>
+      Sound Designer
+    </span>
+  </div>
 </section>
 
+<!-- SISTEMA DE IA -->
 <section>
   <h2 data-es="Sistema de IA" data-en="AI System">Sistema de IA</h2>
-  <ul>
-    <li>Behaviour Trees</li>
-    <li data-es="Sistema de percepción (Visión y oído)" data-en="Perception system (vision & hearing)">Perception system (vision & hearing)</li>
-    <li>Event-driven architecture</li>
-    <li>Pathfinding</li>
-    <li>Flocking</li>
-    <li>Steering behaviours</li>
-    <li data-es="Depuración y editor visual de la IA" data-en="Debugging and visual editor of the AI">Debugging and visual editor of the AI</li>
-  </ul>
+  <div class="ai-grid">
+    <div class="ai-card">
+      <div class="ai-card-title">Behaviour Trees</div>
+      <div class="ai-card-desc"
+        data-es="Árbol de comportamiento modular para controlar la toma de decisiones de los agentes."
+        data-en="Modular behaviour tree controlling agent decision-making logic.">
+        Árbol de comportamiento modular para controlar la toma de decisiones de los agentes.
+      </div>
+    </div>
+    <div class="ai-card">
+      <div class="ai-card-title" data-es="Percepción" data-en="Perception">Percepción</div>
+      <div class="ai-card-desc"
+        data-es="Sistema de visión y audición que filtra estímulos del entorno para alimentar el árbol de comportamiento."
+        data-en="Vision and hearing system that filters environmental stimuli to feed the behaviour tree.">
+        Sistema de visión y audición que filtra estímulos del entorno para alimentar el árbol de comportamiento.
+      </div>
+    </div>
+    <div class="ai-card">
+      <div class="ai-card-title">Pathfinding</div>
+      <div class="ai-card-desc"
+        data-es="Navegación por malla de nodos con búsqueda de caminos eficiente."
+        data-en="Node-mesh navigation with efficient pathfinding search.">
+        Navegación por malla de nodos con búsqueda de caminos eficiente.
+      </div>
+    </div>
+    <div class="ai-card">
+      <div class="ai-card-title">Flocking</div>
+      <div class="ai-card-desc"
+        data-es="Comportamiento colectivo emergente para grupos de agentes: separación, alineación y cohesión."
+        data-en="Emergent collective behaviour for agent groups: separation, alignment and cohesion.">
+        Comportamiento colectivo emergente para grupos de agentes: separación, alineación y cohesión.
+      </div>
+    </div>
+    <div class="ai-card">
+      <div class="ai-card-title">Steering Behaviours</div>
+      <div class="ai-card-desc"
+        data-es="Fuerzas de dirección para movimiento fluido: seek, flee, arrive, pursue y evade."
+        data-en="Steering forces for smooth movement: seek, flee, arrive, pursue and evade.">
+        Fuerzas de dirección para movimiento fluido: seek, flee, arrive, pursue y evade.
+      </div>
+    </div>
+    <div class="ai-card">
+      <div class="ai-card-title" data-es="Arquitectura por eventos" data-en="Event-driven Architecture">Arquitectura por eventos</div>
+      <div class="ai-card-desc"
+        data-es="Comunicación desacoplada entre sistemas mediante eventos para mayor modularidad."
+        data-en="Decoupled inter-system communication via events for greater modularity.">
+        Comunicación desacoplada entre sistemas mediante eventos para mayor modularidad.
+      </div>
+    </div>
+    <div class="ai-card">
+      <div class="ai-card-title" data-es="Herramientas de depuración" data-en="Debug Tools">Herramientas de depuración</div>
+      <div class="ai-card-desc"
+        data-es="Editor visual e inspector de IA en tiempo real para facilitar el trabajo del equipo durante la producción."
+        data-en="Visual editor and real-time AI inspector to streamline team workflow during production.">
+        Editor visual e inspector de IA en tiempo real para facilitar el trabajo del equipo durante la producción.
+      </div>
+    </div>
+  </div>
 </section>
 
 <!-- MEDIA -->
 <section>
   <h2 data-es="Media" data-en="Media">Media</h2>
-
   <div class="carousel-container">
     <button class="carousel-btn left" onclick="scrollCarousel(-1)">‹</button>
-
     <div class="carousel" id="carousel">
-
-      <!-- 🖼️ IMÁGENES -->
       <div class="carousel-item">
         <img src="../src/DonutPanic/1.png" onclick="openLightbox(this.src)">
       </div>
-
       <div class="carousel-item">
         <img src="../src/DonutPanic/2.png" onclick="openLightbox(this.src)">
       </div>
-
       <div class="carousel-item">
         <img src="../src/DonutPanic/3.png" onclick="openLightbox(this.src)">
       </div>
-
       <div class="carousel-item">
         <img src="../src/DonutPanic/4.png" onclick="openLightbox(this.src)">
       </div>
-
     </div>
-
     <button class="carousel-btn right" onclick="scrollCarousel(1)">›</button>
   </div>
 </section>
 
+<!-- YOUTUBE AI PLAYLIST -->
 <section>
-  <h2 data-es="Desafíos" data-en="Challenges">Desafíos</h2>
-  <ul>
-    <li data-es="Diseñar IA modular desde cero" data-en="Designing modular AI from scratch"></li>
-    <li data-es="Separar percepción y comportamiento" data-en="Decoupling perception from behavior"></li>
-    <li data-es="Optimización de rendimiento" data-en="Performance optimization"></li>
-  </ul>
-</section>
-
-<section>
-  <h2 data-es="Qué aprendí" data-en="What I learned">Qué aprendí</h2>
-  <p 
-  data-es="Arquitectura de IA escalable, diseño de sistemas complejos y debugging avanzado, aprender a crear un motor y trabajar de cero."
-  data-en="Scalable AI architecture, complex system design, and advanced debugging, learn to build an engine and work from scratch.">
+  <h2 data-es="IA en desarrollo — Playlist" data-en="AI in Development — Playlist">IA en desarrollo — Playlist</h2>
+  <p class="youtube-label"
+    data-es="Colección de vídeos que documentan las distintas etapas del desarrollo del motor de IA: desde los primeros prototipos hasta los sistemas definitivos en funcionamiento."
+    data-en="A collection of videos documenting the different stages of the AI engine development: from early prototypes to the final systems in action.">
+    Colección de vídeos que documentan las distintas etapas del desarrollo del motor de IA: desde los primeros prototipos hasta los sistemas definitivos en funcionamiento.
   </p>
+  <!-- Reemplaza YOUR_PLAYLIST_ID con el ID real de tu playlist de YouTube -->
+  <div class="youtube-embed">
+    <iframe
+      src="https://www.youtube.com/playlist?list=PLnikM-A7vK7bHuDqUNs2hrJNtVJEMdUPZ"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen>
+    </iframe>
+  </div>
 </section>
 
+<!-- PLAY BUTTON -->
 <section>
-  <a href="https://cletus2000.itch.io/donut-panic" target="_blank" class="btn btn-primary" data-es="Jugar en itch.io" data-en="Play on itch.io">
-    Play on itch.io
+  <a href="https://cletus2000.itch.io/donut-panic" target="_blank" class="btn btn-primary btn-itchio">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M3.13 1.338C2.08 1.96.02 4.328 0 4.95v1.03c0 1.303 1.22 2.45 2.325 2.45 1.33 0 2.436-1.102 2.436-2.41 0 1.308 1.07 2.41 2.4 2.41 1.328 0 2.362-1.102 2.362-2.41 0 1.308 1.107 2.41 2.434 2.41h.024c1.33 0 2.434-1.102 2.434-2.41 0 1.308 1.035 2.41 2.363 2.41 1.33 0 2.4-1.102 2.4-2.41 0 1.308 1.106 2.41 2.435 2.41C22.78 8.43 24 7.283 24 5.98V4.95c-.02-.62-2.082-2.99-3.13-3.612C19.486.47 12.095.442 3.13 1.338zm8.85 6.696c-.332.34-.815.554-1.372.554-.558 0-1.04-.22-1.372-.556v.002c-.334.336-.815.554-1.372.554a2.01 2.01 0 01-.604-.09v8.392c0 .276.526.512 1.173.512h7.938c.646 0 1.172-.236 1.172-.512V8.498a2.014 2.014 0 01-.603.09c-.557 0-1.038-.218-1.37-.554-.334.336-.815.556-1.372.556-.558 0-1.038-.218-1.37-.554l-.002-.002zm-1.788 2.137h4.618c.36 0 .65.294.65.657v3.608c0 .362-.29.657-.65.657H10.19a.653.653 0 01-.65-.657V10.83c0-.363.292-.657.65-.657z"/></svg>
+    <span data-es="Jugar en itch.io" data-en="Play on itch.io">Play on itch.io</span>
   </a>
 </section>
 
